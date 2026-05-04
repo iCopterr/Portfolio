@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: rgba(124, 58, 237, 0.35);
+    color: #f4f4f8;
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar            { width: 6px; }
+::-webkit-scrollbar-track      { background: #0a0a0f; }
+::-webkit-scrollbar-thumb      { background: #2d2d45; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: #7c3aed; }
+
+/* ── Custom utilities ── */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(22, 22, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+  }
+
+  .section-padding {
+    @apply px-6 py-24 md:px-12 lg:px-24;
+  }
+}
